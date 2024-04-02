@@ -24,4 +24,4 @@ yarn-error.log*
 # others
 /.vscode
 /for_me
-/assets/data.json
+/src/assets/data.json
