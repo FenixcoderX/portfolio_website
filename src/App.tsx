@@ -1,7 +1,7 @@
 import './App.css';
 
 function App() {
-  return <div>Portfolio</div>;
+  return <div className="text-3xl">Portfolio</div>;
 }
 
 export default App;

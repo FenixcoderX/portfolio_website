@@ -25,3 +25,4 @@ yarn-error.log*
 /.vscode
 /for_me
 /src/assets/data.json
+/src/assets/img
