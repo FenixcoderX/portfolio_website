@@ -23,6 +23,5 @@ export const getGeoIp = async () => {
     return result;
   } catch (error) {
     console.error('Error to get IP fetch request to API', error);
-    throw error;
   }
 };
