@@ -1,19 +1,114 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  /* TODO maybe delete */
+  /* smooth transition for the whole page */
+  /* transition: all 0.2s linear; */
+}
+/* TODO delete this after the project is done */
+/* section {
+  border: 2px solid red !important;
+} */
 
-body {
-  margin: 0;
+* {
+  border: 0 !important;
+}
+
+/* CSS for custom carousel */
+.Carousel_DisplayFrame__untpB {
+  white-space: nowrap;
+}
+
+.Carousel_CarouselItem__bXmqw {
+  display: inline-block;
+  vertical-align: top;
+}
+
+html body {
+  /* margin: 0; */
   padding: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-    font-family: "Open Sans", sans-serif;
-    font-weight:400;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  height: 100vh;
+  /* background-color: #141824; */
+
+  /* Set the colors of the text selection */
+  ::selection {
+    background-color: #878a8f;
+    color: #fff;
+  }
 }
 
-/* "Helvetica Now Display DW",sans-serif
-"Open Sans",sans-serif; */
+#root {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Swiper */
+html .swiper-button-next::after {
+  content: '';
+}
+html .swiper-button-prev::after {
+  content: '';
+}
+
+html .swiper-button-next,
+.swiper-button-prev {
+  background-image: url('./assets/icons/arrowRight.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+  bottom: -10px;
+  top: auto;
+  width: 45px;
+}
+html .swiper-button-prev {
+  transform: scaleX(-1);
+  right: 58px;
+  left: auto;
+  bottom: -10px;
+  top: auto;
+  width: 45px;
+}
+
+html .swiper-pagination-bullet {
+  border-radius: 15px;
+}
+html .swiper-pagination-bullet-active {
+  width: 30px;
+}
+
+html .change-swiper-container {
+  padding-bottom: 65px;
+}
+/* html .swiper-slide-active {
+  transform:  scale(0.8) !important;
+  opacity: 0.5 !important;
+
+} */
+/* html .swiper-slide-next{
+  transform:  scale(1.4) !important;
+
+} */
+/* html .swiper-slide-next + div{
+  transform:  scale(0.8) !important;
+  opacity: 0.5 !important;
+} */
+
+/* Animation */
+@keyframes slide-up-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up-fade-in {
+  animation: slide-up-fade-in 1.5s ease-out forwards;
+}

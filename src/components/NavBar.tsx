@@ -1,3 +1,52 @@
-const NavBar = () => {  }
+import { Link } from 'react-router-dom';
+
+// Navigation bar data type
+type nav = {
+  logo: string;
+  skills: string;
+  projects: string;
+  language: string;
+};
+
+// Navigation bar component
+const NavBar = ({ nav, changeLanguage }: { nav: nav; changeLanguage: Function }) => {
+  /**
+   * Scrolls to the specified element on the page
+   * @param id - The ID of the element to scroll to
+   */
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section id="navbar" className="h-20">
+      <div className="flex justify-between items-center px-2.5 py-2.5">
+        {/* Logo */}
+        <div>
+          <img className="w-14 h-14" src={nav.logo} alt="Logo" />
+        </div>
+
+        {/* Navigation links */}
+        <ul className="flex">
+          <li className="px-2.5 text-color-3 font-extrabold px-2 text-center  leading-6 text-sm tracking-wide ">
+            <Link to="/" onClick={() => scrollTo('skills')}>
+              {nav.skills.toUpperCase()}
+            </Link>
+          </li>
+          <li className="px-2.5  text-color-3 font-extrabold px-2 text-center  leading-6 text-sm tracking-wide">
+            <Link to="/" onClick={() => scrollTo('projects')}>
+              {nav.projects.toUpperCase()}
+            </Link>
+          </li>
+          {/* Change language */}
+          <li className="px-9   text-color-3 font-extrabold px-2 text-center  leading-6 text-sm tracking-wide">
+            <button onClick={() => changeLanguage()}>{nav.language.toUpperCase()}</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
+};
 
 export default NavBar;

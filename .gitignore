@@ -12,6 +12,7 @@
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -26,3 +27,4 @@ yarn-error.log*
 /for_me
 /src/assets/data.json
 /src/assets/img
+/public/assets/img
