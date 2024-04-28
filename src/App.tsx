@@ -202,7 +202,7 @@ const App = () => {
     return (
       <Fragment>
         <div>
-          <img src="assets/img/info_background1.jpg" alt="Hero" className="absolute right-0 w-full h-lvh z-[-1] opacity-[0.1] object-cover" />
+          {/* <img src="assets/img/info_background1.jpg" alt="Hero" className="absolute right-0 w-full h-lvh z-[-1] opacity-[0.1] object-cover" /> */}
 
           <NavBar nav={data.nav} changeLanguage={changeLanguage} />
           <Info info={data.info} />

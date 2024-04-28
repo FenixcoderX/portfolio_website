@@ -59,8 +59,8 @@ const scrollTo = (id: string) => {
   
 
   return (
-    <section id="skills" className="relative min-h-[100vh] pt-[30px] pb-[70px] md:pb-[0px]">
-      <div className="flex items-center flex-col">
+    <section id="skills" className="relative min-h-[100vh] pt-[30px] pb-[70px] ">
+      <div className="flex items-center flex-col ">
         {/* Display the title and description */}
         {/* <h1 className="text-3xl font-bold "> {skills.title}</h1> */}
         {/* <h1 className="text-color-3 font-extrabold text-4xl tracking-tight text-center"> {skills.title}</h1>
@@ -77,12 +77,12 @@ const scrollTo = (id: string) => {
           {skills.category.map((category) => (
             <div key={category.name} className="sm:w-1/3 w-2/3 mx-3.5 my-3.5 flex items-center flex-col">
               <h2 className="text-sm text-center text-color-1 tracking-widest font-normal mb-1">{category.name.toUpperCase()}</h2>
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center  flex-wrap">
                 {/* map through the list array inside the category object */}
                 {category.list.map((item, index) => (
-                  <span key={item} className="flex">
+                  <span key={item} className="flex items-end">
                     <span className="text-color-3 font-extrabold px-2 text-center text-lg leading-6">{item}</span>
-                    <span className="text-color-2 font-medium text-lg leading-6">{index < category.list.length - 1 ? '/' : ''} </span>
+                    <span className="text-color-2 font-medium text-lg leading-6 ">{index < category.list.length - 1 ? '/' : ''} </span>
                   </span>
                 ))}
               </div>

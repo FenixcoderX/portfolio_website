@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'xl-custom': ['1.25rem', { lineHeight: '1.5rem' }],
+      },
       height: {
         'calc(100vh-5rem)': 'calc(100vh-5rem)',
       },
