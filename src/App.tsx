@@ -86,7 +86,18 @@ const App = () => {
           //----------
 
           //---------- Fetch from Netlify function
-          const res = await fetch(`/.netlify/functions/getGeoIp`)
+          // Fetch the IP adress
+          const ip = await fetch('https://api.ipify.org?format=json')
+            .then((res) => res.json())
+            .catch((err) => {});
+          // Fetch the IP data
+          const res = await fetch(`/.netlify/functions/getGeoIp`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ip: ip.ip }),
+          })
             .then((res) => res.json())
             .catch((err) => {}); // Fetch the IP data
           //----------
