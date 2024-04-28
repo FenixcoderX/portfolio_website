@@ -1,14 +1,23 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { FaAnglesDown } from "react-icons/fa6";
 
 // Skills data type
-type skills = {
+type SkillsData = {
   title: string;
   description: string;
   category: { name: string; list: string[] }[];
 };
 
 // Skills component
-const Skills = ({ skills }: { skills: skills }) => {
+const Skills = ({ skills }: { skills: SkillsData }) => {
+/**
+   * Scrolls to the specified element on the page
+   * @param id - The ID of the element to scroll to
+   */
+const scrollTo = (id: string) => {
+  const element = document.getElementById(id);
+  element?.scrollIntoView({ behavior: 'smooth' });
+};
 
   // State to check if the element is visible and trigger the animation
   const [isVisible, setIsVisible] = useState(false); // State to check if the element is visible and trigger the animation
@@ -50,7 +59,7 @@ const Skills = ({ skills }: { skills: skills }) => {
   
 
   return (
-    <section id="skills" className="">
+    <section id="skills" className="relative min-h-[100vh] pt-[30px] pb-[70px] md:pb-[0px]">
       <div className="flex items-center flex-col">
         {/* Display the title and description */}
         {/* <h1 className="text-3xl font-bold "> {skills.title}</h1> */}
@@ -81,6 +90,10 @@ const Skills = ({ skills }: { skills: skills }) => {
           ))}
         </div>
       </div>
+      <button onClick={() => scrollTo('projects')} >
+      <FaAnglesDown className=" text-color-3 absolute bottom-5 left-1/2 transform -translate-x-1/2 w-10 h-10">          
+      </FaAnglesDown>
+      </button>
     </section>
   );
 };

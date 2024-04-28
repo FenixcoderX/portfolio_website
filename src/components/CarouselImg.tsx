@@ -3,10 +3,10 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 import { useSwipeable } from 'react-swipeable'; // Add swipe functionality to the carousel
 
 // Carousel images data type
-type images = string[];
+type Images = string[];
 
 // Carousel component with images
-export default function Carousel({ images }: { images: images }) {
+export default function Carousel({ images }: { images: Images }) {
   let [current, setCurrent] = useState(0);
 
   // Swipe hook handlers for the carousel

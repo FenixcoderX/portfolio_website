@@ -28,3 +28,6 @@ yarn-error.log*
 /src/assets/data.json
 /src/assets/img
 /public/assets/img
+/public/icon.png
+# Local Netlify folder
+.netlify

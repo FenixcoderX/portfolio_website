@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 // Navigation bar data type
-type nav = {
+type NavData = {
   logo: string;
   skills: string;
   projects: string;
@@ -9,7 +9,7 @@ type nav = {
 };
 
 // Navigation bar component
-const NavBar = ({ nav, changeLanguage }: { nav: nav; changeLanguage: Function }) => {
+const NavBar = ({ nav, changeLanguage }: { nav: NavData; changeLanguage: Function }) => {
   /**
    * Scrolls to the specified element on the page
    * @param id - The ID of the element to scroll to
@@ -18,7 +18,6 @@ const NavBar = ({ nav, changeLanguage }: { nav: nav; changeLanguage: Function })
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
-
   return (
     <section id="navbar" className="h-20">
       <div className="flex justify-between items-center px-2.5 py-2.5">
@@ -29,18 +28,18 @@ const NavBar = ({ nav, changeLanguage }: { nav: nav; changeLanguage: Function })
 
         {/* Navigation links */}
         <ul className="flex">
-          <li className="px-2.5 text-color-3 font-extrabold px-2 text-center  leading-6 text-sm tracking-wide ">
+          <li className="px-2.5 text-color-3 font-extrabold px-2 text-center  leading-6 text-xs sm:text-sm tracking-wide ">
             <Link to="/" onClick={() => scrollTo('skills')}>
               {nav.skills.toUpperCase()}
             </Link>
           </li>
-          <li className="px-2.5  text-color-3 font-extrabold px-2 text-center  leading-6 text-sm tracking-wide">
+          <li className="px-2.5  text-color-3 font-extrabold px-2 text-center  leading-6 text-xs sm:text-sm tracking-wide">
             <Link to="/" onClick={() => scrollTo('projects')}>
               {nav.projects.toUpperCase()}
             </Link>
           </li>
           {/* Change language */}
-          <li className="px-9   text-color-3 font-extrabold px-2 text-center  leading-6 text-sm tracking-wide">
+          <li className="px-9   text-color-3 font-extrabold px-2 text-center  leading-6 text-xs sm:text-sm tracking-wide">
             <button onClick={() => changeLanguage()}>{nav.language.toUpperCase()}</button>
           </li>
         </ul>

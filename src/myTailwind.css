@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.li-class {
+/* .li-class {
     @apply text-lg text-blue-500 hover:text-blue-700;
-  }
+  } */

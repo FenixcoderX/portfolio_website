@@ -1,29 +1,30 @@
-* {
-  /* TODO maybe delete */
-  /* smooth transition for the whole page */
-  /* transition: all 0.2s linear; */
-}
-/* TODO delete this after the project is done */
+/* * {
+   transition: all 0.2s linear;
+} */
+
+/* * {
+  border: 0 !important;
+} */
+/* * {
+  border: solid 2px !important;
+
+} */
+
 /* section {
   border: 2px solid red !important;
 } */
-
-* {
-  border: 0 !important;
-}
 
 /* CSS for custom carousel */
 .Carousel_DisplayFrame__untpB {
   white-space: nowrap;
 }
-
 .Carousel_CarouselItem__bXmqw {
   display: inline-block;
   vertical-align: top;
 }
 
+/* ----------- Main CSS ----------- */
 html body {
-  /* margin: 0; */
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -31,7 +32,7 @@ html body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   height: 100vh;
-  /* background-color: #141824; */
+  background-color: #141824;
 
   /* Set the colors of the text selection */
   ::selection {
@@ -39,21 +40,23 @@ html body {
     color: #fff;
   }
 }
-
 #root {
-  max-width: 1500px;
+  max-width: 1950px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Swiper */
+html .change-swiper-container {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
 html .swiper-button-next::after {
   content: '';
 }
 html .swiper-button-prev::after {
   content: '';
 }
-
 html .swiper-button-next,
 .swiper-button-prev {
   background-image: url('./assets/icons/arrowRight.svg');
@@ -72,30 +75,12 @@ html .swiper-button-prev {
   top: auto;
   width: 45px;
 }
-
 html .swiper-pagination-bullet {
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 html .swiper-pagination-bullet-active {
-  width: 30px;
+  width: 5px;
 }
-
-html .change-swiper-container {
-  padding-bottom: 65px;
-}
-/* html .swiper-slide-active {
-  transform:  scale(0.8) !important;
-  opacity: 0.5 !important;
-
-} */
-/* html .swiper-slide-next{
-  transform:  scale(1.4) !important;
-
-} */
-/* html .swiper-slide-next + div{
-  transform:  scale(0.8) !important;
-  opacity: 0.5 !important;
-} */
 
 /* Animation */
 @keyframes slide-up-fade-in {
@@ -108,7 +93,34 @@ html .change-swiper-container {
     transform: translateY(0);
   }
 }
-
 .slide-up-fade-in {
   animation: slide-up-fade-in 1.5s ease-out forwards;
+}
+
+@keyframes reveal {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+.reveal {
+  animation: reveal 2s ease-out forwards;
+}
+
+@keyframes reveal2 {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+.reveal2 {
+  animation: reveal 1.5s ease-out forwards;
 }

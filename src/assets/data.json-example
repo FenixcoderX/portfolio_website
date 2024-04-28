@@ -1,0 +1,114 @@
+{
+  "en": {
+    "nav": {
+      "logo": "/assets/img/sample_logo.png",
+      "skills": "Skills",
+      "projects": "Projects",
+      "language": "En"
+    },
+    "info": {
+      "title": "Developer",
+      "hello": "Hi",
+      "description": "Please look at my website",
+      "skills": "Skills",
+      "projects": "Projects",
+      "or": "or"
+    },
+
+    "skills": {
+      "title": "Skills",
+      "description": "My skills",
+      "category": [
+        { "name": "Programming language", "list": ["JavaScript", "TypeScript"] },
+        { "name": "Front end", "list": ["HTML5", "CSS3"] }
+      ]
+    },
+
+    "projects": {
+      "title": "Projects",
+      "description": "My projects",
+      "list": [
+        {
+          "name": "My first project",
+          "description": "This is my first project",
+          "tech_stack": ["JavaScript", "HTML5", "CSS3"],
+          "img": ["/assets/img/screens/firstproject1.png","/assets/img/screens/firstproject2.png"],
+          "linkGithub": "https://github.com/",
+          "LinkWebsite": "",
+          "bgcolor": "#4B4956"
+        },
+        {
+          "name": "My second project",
+          "description": "This is my second project",
+          "tech_stack": ["JavaScript", "HTML5", "CSS3"],
+          "img": ["/assets/img/screens/secondproject1.png"],
+          "linkGithub": "https://github.com/",
+          "LinkWebsite": "",
+          "bgcolor": "#4B4956"
+        }
+      ]
+    },
+    "footer": {
+      "info": "Thank you for watching!",
+      "copyright1": "© 2024 Designed & Developed with",
+      "copyright2": "by FenixcoderX"
+    }
+  },
+
+  "ru": {
+    "nav": {
+      "logo": "/assets/img/sample_logo.png",
+      "skills": "Навыки",
+      "projects": "Проекты",
+      "language": "Ru"
+    },
+    "info": {
+      "title": "Разработчик",
+      "hello": "Привет",
+      "description": "Пожалуйста, ознакомьтесь с моим сайтом",
+      "skills": "Навыки",
+      "projects": "Проекты",
+      "or": "и"
+    },
+ 
+
+    "skills": {
+      "title": "Навыки",
+      "description": "Мои навыки",
+      "category": [
+        { "name": "Язык программирования", "list": ["JavaScript", "TypeScript"] },
+        { "name": "Фронтенд", "list": ["HTML5", "CSS3"] }
+      ]
+    },
+
+    "projects": {
+      "title": "Проекты",
+      "description": "Мои проекты",
+      "list": [
+        {
+          "name": "Первый проект",
+          "description": "Это мой первый проект",
+          "tech_stack": ["JavaScript", "HTML5", "CSS3"],
+          "img": ["/assets/img/screens/firstproject1.png","/assets/img/screens/firstproject2.png"],
+          "linkGithub": "https://github.com/",
+          "LinkWebsite": "",
+          "bgcolor": "#4B4956"
+        },
+        {
+          "name": "Второй проект",
+          "description": "Это мой второй проект",
+          "tech_stack": ["JavaScript", "HTML5", "CSS3"],
+          "img": ["/assets/img/screens/secondproject1.png"],
+          "linkGithub": "https://github.com/",
+          "LinkWebsite": "",
+          "bgcolor": "#4B4956"
+        }
+      ]
+    },
+    "footer": {
+      "info": "Спасибо, что посмотрели",
+      "copyright1": "© 2024 Дизайн и Разработка",
+      "copyright2": "- FenixcoderX"
+    }
+  }
+}
