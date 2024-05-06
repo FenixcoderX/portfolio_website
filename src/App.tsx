@@ -6,7 +6,7 @@ import Skills from './components/Skills';
 import ProjectList from './components/ProjectList';
 import Footer from './components/Footer';
 import { Fragment, useState, useEffect } from 'react';
-import { getGeoIp, sFirstVisit, sNextVisit } from './utils/apiCalls';
+//import { getGeoIp, sFirstVisit, sNextVisit } from './utils/apiCalls';
 import { ThreeDots } from 'react-loader-spinner';
 
 // Data type for the data fetched from the JSON file (main data of the app)

@@ -4,7 +4,7 @@
 import Carousel from './CarouselSwipe'; //Carousel using swiper
 import { IoLogoGithub, IoMdOpen } from 'react-icons/io';
 import { useEffect, useState, useRef } from 'react';
-import { sLinkClick } from '../utils/apiCalls';
+//import { sLinkClick } from '../utils/apiCalls';
 
 type ProjectsData = {
   title: string;
@@ -77,6 +77,7 @@ const ProjectList = ({ projects }: { projects: ProjectsData }) => {
     // Add the scroll event listener and remove it when the component is unmounted
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line 
   }, []);
 
   return (
@@ -85,7 +86,7 @@ const ProjectList = ({ projects }: { projects: ProjectsData }) => {
         {/* Display the title and description */}
 
         <h1 className="text-color-1 text-base  font-normal tracking-widest my-3"> {projects.title.toUpperCase()}</h1>
-        <p ref={ref} className={`opacity-0 text-color-3 font-extrabold text-4xl tracking-tight text-center ${isVisible ? 'slide-up-fade-in' : ''}`}>
+        <p ref={ref} className={`opacity-0 text-color-3 font-extrabold text-4xl tracking-tight text-center px-6 ${isVisible ? 'slide-up-fade-in' : ''}`}>
           {projects.description}
         </p>
 
@@ -103,20 +104,22 @@ const ProjectList = ({ projects }: { projects: ProjectsData }) => {
               </div>
 
               {/* Container for the project details */}
-              <div className="w-[95vw] lg:w-[40vw]  max-w-[950px]   flex items-center flex-col lg:ml-5  mt-5 lg:mt-0 ">
-                <h2 className="text-color-1 text-3xl font-extrabold tracking-tight  text-center mb-3">{project.name}</h2>
-                <p className=" text-color-4 text-lg leading-6 tracking-normal text-center mb-3">{project.description}</p>
+              <div className="w-[85vw] lg:w-[40vw]  max-w-[950px]   flex items-center flex-col lg:ml-7  mt-8 lg:my-8 ">
+                <h2 className="text-color-1 text-3xl font-extrabold tracking-tight  text-center mb-8">{project.name}</h2>
+                <p className=" text-color-4 text-base sm:text-lg sm:leading-6 tracking-normal mb-8" dangerouslySetInnerHTML={{ __html: project.description.replace(/\n/g, '<br />') }}></p>
+                {/* dangerouslySetInnerHTML is used to render the HTML tags in the string */}
+                
                 {/* Display the tech stack */}
-                <div className="flex flex-wrap justify-center mt-2">
+                <div className="flex flex-wrap justify-center px-4 ">
                   {project.tech_stack.map((tech, index) => (
                     <span key={tech} className="flex">
-                      <span className="text-color-4 font-medium px-2 text-center text-sm leading-6">{tech}</span>
-                      <span className="text-color-2 font-medium text-sm leading-6">{index < project.tech_stack.length - 1 ? '/' : ''} </span>
+                      <span className="text-color-4 font-medium px-2 text-center text-xs sm:text-sm leading-6">{tech}</span>
+                      <span className="text-color-2 font-medium text-xs sm:text-sm leading-6">{index < project.tech_stack.length - 1 ? '/' : ''} </span>
                     </span>
                   ))}
                 </div>
                 {/* Links to the project repository with GitHub icon and to the website with Open icon */}
-                <span className='pt-2'>
+                <span className="pt-2">
                   <a href={project.linkGithub} onClick={saveClick} target="_blank" rel="noreferrer" className="px-2 py-1 mt-2  text-color-1 text-lg leading-6 font-extrabold tracking-normal  rounded-md ">
                     <IoLogoGithub className="inline pb-[0.18rem] text-3xl "></IoLogoGithub> GitHub
                   </a>

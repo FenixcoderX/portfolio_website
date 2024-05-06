@@ -49,6 +49,7 @@ const Carousel = ({ images }: { images: Images }) => {
     // Add the scroll event listener and remove it when the component is unmounted
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line 
   }, []);
 
   return (

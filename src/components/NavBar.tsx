@@ -27,22 +27,24 @@ const NavBar = ({ nav, changeLanguage }: { nav: NavData; changeLanguage: Functio
         </div>
 
         {/* Navigation links */}
-        <ul className="flex">
-          <li className="px-2.5 text-color-3 font-extrabold  text-center  leading-6  text-xs  sm:text-sm tracking-wide hidden min-[380px]:list-item">
+        <div className="flex">
+          <ul className=" justify-start w-[186px] hidden min-[380px]:flex">
+          <li className="px-2.5 text-color-3 font-extrabold  text-center  leading-6  text-xs  sm:text-sm tracking-wide ">
             <Link to="/" onClick={() => scrollTo('skills')}>
               {nav.skills.toUpperCase()}
             </Link>
           </li>
-          <li className="px-2.5  text-color-3 font-extrabold  text-center  leading-6  text-xs  sm:text-sm tracking-wide hidden min-[380px]:list-item">
+          <li className="px-2.5  text-color-3 font-extrabold  text-center  leading-6  text-xs  sm:text-sm tracking-wide ">
             <Link to="/" onClick={() => scrollTo('projects')}>
               {nav.projects.toUpperCase()}
             </Link>
           </li>
+          </ul>
           {/* Change language */}
-          <li className="px-9   text-color-3 font-extrabold text-center  leading-6 text-xs sm:text-sm tracking-wide">
+          <div className="px-9   text-color-3 font-extrabold text-center  leading-6 text-xs sm:text-sm tracking-wide">
             <button onClick={() => changeLanguage()}>{nav.language.toUpperCase()}</button>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

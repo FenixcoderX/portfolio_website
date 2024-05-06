@@ -54,6 +54,7 @@ const scrollTo = (id: string) => {
     // Add the scroll event listener and remove it when the component is unmounted
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line 
   }, []);
 
   
@@ -67,22 +68,37 @@ const scrollTo = (id: string) => {
         <p className=" text-color-1 font-normal text-lg leading-6 tracking-normal text-center">{skills.description}</p> */}
 
         <h1 className="text-color-1 text-base  font-normal tracking-widest my-3"> {skills.title.toUpperCase()}</h1>
-        <p ref={ref} className={`opacity-0 text-color-3 font-extrabold text-4xl tracking-tight text-center ${isVisible ? 'slide-up-fade-in' : ''}`}>
+        <p ref={ref} className={`opacity-0 text-color-3 font-extrabold text-4xl tracking-tight text-center px-6 ${isVisible ? 'slide-up-fade-in' : ''}`}>
           {skills.description}
         </p>
 
         {/* Display the skills */}
-        <div className="flex flex-wrap justify-evenly mx-3.5 my-3.5">
+        <div className="flex flex-wrap justify-center mx-3.5 my-3.5">
           {/* map through the category array */}
-          {skills.category.map((category) => (
+          
+          {/* {skills.category.map((category) => (
             <div key={category.name} className="sm:w-1/3 w-2/3 mx-3.5 my-3.5 flex items-center flex-col">
               <h2 className="text-sm text-center text-color-1 tracking-widest font-normal mb-1">{category.name.toUpperCase()}</h2>
-              <div className="flex justify-center  flex-wrap">
+              <div className="flex justify-center  flex-wrap"> */}
                 {/* map through the list array inside the category object */}
-                {category.list.map((item, index) => (
+                {/* {category.list.map((item, index) => (
                   <span key={item} className="flex items-end">
                     <span className="text-color-3 font-extrabold px-2 text-center text-lg leading-6">{item}</span>
                     <span className="text-color-2 font-medium text-lg leading-6 ">{index < category.list.length - 1 ? '/' : ''} </span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))} */}
+            {skills.category.map((category) => (
+            <div key={category.name} className=" w-4/5 sm:w-[44%] lg:w-1/3 mx-3.5 my-3.5 flex items-start flex-col">
+              <h2 className="text-sm  text-color-1 tracking-widest font-normal mb-1">{category.name.toUpperCase()}</h2>
+              <div className="flex justify-start  flex-wrap w-full">
+                {/* map through the list array inside the category object */}
+                {category.list.map((item, index) => (
+                  <span key={item} className="flex items-end">
+                    <span className="text-color-3 font-extrabold   text-lg leading-6">{item}</span>
+                    <span className="text-color-2 font-medium text-lg px-2 leading-6 ">{index < category.list.length - 1 ? '/' : ''} </span>
                   </span>
                 ))}
               </div>

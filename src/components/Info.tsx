@@ -29,7 +29,7 @@ const Info = ({ info }: { info: InfoData }) => {
   return (
     <section id="info" className="flex flex-col sm:flex-row items-center sm:items-center  min-h-[calc(100vh-5rem)] relative">
       {/* Info container */}
-      <div className="mt-10 sm:pb-20 px-2 w-full sm:w-2/3 slide-up-fade-in">
+      <div className="mt-10 sm:pb-20 px-6 sm:pr-0 w-full sm:w-2/3 slide-up-fade-in">
         {/* Main info */}
         <h1 className="text-color-3 text-3xl min-[380px]:text-4xl sm:text-6xl font-extrabold tracking-tight mb-4 min-[380px]:mb-5"> {info.title}</h1>
         <p className="text-color-1  text-lg leading-6 min-[380px]:text-xl-custom sm:text-2xl font-medium  tracking-normal mb-4 min-[380px]:mb-5  ">
