@@ -1,11 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaAnglesDown } from 'react-icons/fa6';
 
-//  "Greetings, I am a full stack developer with a passion for creating user-friendly and responsive web applications"
-//"Greetings, I am a JS software developer with a previous career in the medical industry. I love building web applications. I’m looking for a team where I can further grow my software engineering skills"
-//"Greetings, I am a JS software developer with a previous career in the medical industry. I love building web applications and I am currently seeking a team where I can further grow my software engineering skills"
-
-// Info data type
 type InfoData = {
   title: string;
   hello: string;
@@ -15,7 +10,6 @@ type InfoData = {
   or: string;
 };
 
-// Info component
 const Info = ({ info }: { info: InfoData }) => {
   /**
    * Scrolls to the specified element on the page
@@ -54,8 +48,6 @@ const Info = ({ info }: { info: InfoData }) => {
       </button>
       {/* Text on background */}
       {/* <div className="absolute top-0 left-0 right-0 mx-auto text-8xl  z-[-1] opacity-[0.05] w-full text-center font-black">Hire me</div> */}
-      {/* Text img on background */}
-      {/* <img src="assets/img/developer_text1.svg" alt="developer" className="absolute top-[-45vh] h-[1000px] w-full  z-[-1] opacity-[0.05] " /> */}
       {/* Image on the right */}
       <img src="assets/img/info-image1.svg" alt="developer" className="sm:absolute mb-12 sm:mb-0 bottom-28 sm:bottom-auto right-[27%] sm:right-0 w-[45%] sm:w-1/3 reveal  sm:max-h-full" />
       {/* background image */}

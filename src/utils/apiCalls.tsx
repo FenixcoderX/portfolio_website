@@ -31,7 +31,6 @@ type FirstVisitData = {
  * @param firstVisitData - The data to be sent in the request body
  */
 export const sFirstVisit = async (firstVisitData: FirstVisitData) => {
-  //console.log('firstVisitData', JSON.stringify(firstVisitData));
 
   try {
     // const response = await fetch(`http://localhost:3001/sFirstVisit`, {
@@ -42,9 +41,6 @@ export const sFirstVisit = async (firstVisitData: FirstVisitData) => {
       },
       body: JSON.stringify(firstVisitData),
     });
-    // const result = await response.json();
-    // console.log(result);
-    // return result;
   } catch (error) {
     console.error('Error to POST sFirstVisit fetch request to API', error);
   }
@@ -55,9 +51,7 @@ export const sFirstVisit = async (firstVisitData: FirstVisitData) => {
  */
 export const sNextVisit = async () => {
   const user = JSON.parse(localStorage.getItem('user') as string);
-  // console.log ("user",user)
   const nextVisitData = { nextVisit: new Date().toLocaleString('en-GB'), id: user.id };
-  // console.log ("nextVisitData",JSON.stringify(nextVisitData))
   try {
     await fetch(`${process.env.REACT_APP_ANALYTIC_API_URL}/sNextVisit`, {
       method: 'POST',
@@ -66,9 +60,6 @@ export const sNextVisit = async () => {
       },
       body: JSON.stringify(nextVisitData),
     });
-    // const result = await response.json();
-    // console.log(result);
-    // return result;
   } catch (error) {
     console.error('Error to POST sNextVisit fetch request to API', error);
   }
@@ -94,9 +85,6 @@ export const sLinkClick = async (clickData: ClickData) => {
       },
       body: JSON.stringify(clickData),
     });
-    // const result = await response.json();
-    // console.log(result);
-    // return result;
   } catch (error) {
     console.error('Error to POST sLinkClick fetch request to API', error);
   }

@@ -8,11 +8,9 @@ exports.handler = async function (event, context) {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  // console.log('event.body', event.body);
   const clickData = JSON.parse(event.body);
   // Add the password to the data object that needs to be sent to the API to authenticate the request
   clickData.password = process.env.REACT_APP_ANALYTIC_API_PASSWORD;
-  // console.log('clickData', clickData);
 
   try {
     await fetch(`${process.env.REACT_APP_ANALYTIC_API_URL}/sLinkClick`, {

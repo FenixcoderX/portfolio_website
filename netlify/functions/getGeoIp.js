@@ -17,14 +17,11 @@ exports.handler = async function (event, context) {
     // If response is OK (status 200), return the result or null if the response is not OK
     if (response.status === 200) {
       const result = await response.json();
-      //console.log ("result",JSON.stringify(result))
       return {
         statusCode: 200,
         body: JSON.stringify(result),
       };
     } else {
-      // const result = await response.json();
-      // console.log ("result",JSON.stringify(result))
       return {
         statusCode: 200,
         body: null,

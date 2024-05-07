@@ -30,7 +30,6 @@ type Data = {
   footer: { info: string; copyright1: string; copyright2: string };
 };
 
-// Main component of the application
 const App = () => {
   // State to store the selected language
   const [language, setlanguage] = useState(localStorage.getItem('language'));
@@ -99,15 +98,12 @@ const App = () => {
             body: JSON.stringify({ ip: ip.ip }),
           })
             .then((res) => res.json())
-            .catch((err) => {}); // Fetch the IP data
+            .catch((err) => {});
           //----------
-
-          // console.log('response from GeoAPI', res);
 
           //---------- Сollect data
           const id = Math.random().toString(36).substring(2, 15);
           if (res && res.country.iso_code && res.ip) {
-            // localStorage.setItem('user', JSON.stringify({ country: res.country.iso_code, ip: res.ip, firstVisit: new Date().toLocaleString('en-GB'), id: id }));
             localStorage.setItem('user', JSON.stringify({ id: id }));
             //---------- Frontend fetch
             // sFirstVisit({ country: res.country.iso_code, ip: res.ip, firstVisit: new Date().toLocaleString('en-GB'), id: id });
@@ -122,7 +118,6 @@ const App = () => {
             });
             //----------
           } else {
-            // localStorage.setItem('user', JSON.stringify({ country: 'unknown', ip: 'unknown', firstVisit: new Date().toLocaleString('en-GB'), id: id }));
             localStorage.setItem('user', JSON.stringify({ id: id }));
             //---------- Frontend fetch
             // sFirstVisit({ country: 'unknown', ip: 'unknown', firstVisit: new Date().toLocaleString('en-GB'), id: id });
@@ -139,7 +134,6 @@ const App = () => {
           }
           //----------
 
-          // console.log('response from GeoAPI', res);
           // Check if the country is Russia to set the language to Russian otherwise set it to English
           if (res && res.country.iso_code === 'RU') {
             setlanguage('ru');
@@ -185,18 +179,6 @@ const App = () => {
         body: JSON.stringify({ id: JSON.parse(localStorage.getItem('user') ?? '').id }),
       });
       //----------
-      // const user = JSON.parse(localStorage.getItem('user') as string);
-      // if (user.visit) {
-      //   //////// This check only needed in developer mode, because of React.StrictMode (component renders twice in dev mode)
-      //   if (user.visit[user.visit.length - 1] !== new Date().toLocaleString('en-GB')) {
-      //     user.visit.push(new Date().toLocaleString('en-GB'));
-      //   }
-      //   ////////
-      // } else {
-      //   user.visit = [new Date().toLocaleString('en-GB')];
-      // }
-      // localStorage.setItem('user', JSON.stringify(user));
-      //console.log('user',user);
     }
   }, []);
   //----------
@@ -213,8 +195,6 @@ const App = () => {
     return (
       <Fragment>
         <div>
-          {/* <img src="assets/img/info_background1.jpg" alt="Hero" className="absolute right-0 w-full h-lvh z-[-1] opacity-[0.1] object-cover" /> */}
-
           <NavBar nav={data.nav} changeLanguage={changeLanguage} />
           <Info info={data.info} />
         </div>

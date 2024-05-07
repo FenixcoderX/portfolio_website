@@ -1,14 +1,12 @@
 import { FaAnglesDown } from 'react-icons/fa6';
 import { TbHeartFilled } from 'react-icons/tb';
 
-// Footer data type
 type FooterData = {
   info: string;
   copyright1: string;
   copyright2: string;
 };
 
-// Footer component
 const Footer = ({ footer, language }: { footer: FooterData; language: string | null }) => {
   /**
    * Scrolls to the specified element on the page

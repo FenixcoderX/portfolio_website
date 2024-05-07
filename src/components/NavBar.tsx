@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-// Navigation bar data type
 type NavData = {
   logo: string;
   skills: string;
@@ -8,7 +7,6 @@ type NavData = {
   language: string;
 };
 
-// Navigation bar component
 const NavBar = ({ nav, changeLanguage }: { nav: NavData; changeLanguage: Function }) => {
   /**
    * Scrolls to the specified element on the page

@@ -8,12 +8,10 @@ exports.handler = async function (event, context) {
   }
 
   const user = JSON.parse(event.body);
-  //   console.log('user', user);
 
   const nextVisitData = { nextVisit: new Date().toLocaleString('en-GB'), id: user.id };
   // Add the password to the data object that needs to be sent to the API to authenticate the request
   nextVisitData.password=process.env.REACT_APP_ANALYTIC_API_PASSWORD;
-    // console.log('nextVisitData', JSON.stringify(nextVisitData));
   try {
     await fetch(`${process.env.REACT_APP_ANALYTIC_API_URL}/sNextVisit`, {
       method: 'POST',

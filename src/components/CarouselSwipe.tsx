@@ -13,7 +13,6 @@ import 'swiper/css/keyboard';
 
 type Images = string[];
 
-// Carousel component
 const Carousel = ({ images }: { images: Images }) => {
   // State to check if the element is visible and trigger the animation
   const [isVisible, setIsVisible] = useState(false); // State to check if the element is visible and trigger the animation

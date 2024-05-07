@@ -1,6 +1,3 @@
-// import Carousel from "./Carousel"; // Custom carousel where div containers scrolling. Final version
-// import Carousel from "./CarouselDiv"; //Custom carousel where div containers div appears and disappears
-// import Carousel from "./CarouselImg"; //Custom carousel where img scrolling
 import Carousel from './CarouselSwipe'; //Carousel using swiper
 import { IoLogoGithub, IoMdOpen } from 'react-icons/io';
 import { useEffect, useState, useRef } from 'react';
@@ -12,7 +9,6 @@ type ProjectsData = {
   list: { name: string; description: string; tech_stack: string[]; img: string[]; linkGithub: string; LinkWebsite: string; bgcolor: string }[];
 };
 
-// ProjectList component
 const ProjectList = ({ projects }: { projects: ProjectsData }) => {
   //---------- Сollect data
   const saveClick = (e: any) => {
@@ -29,17 +25,6 @@ const ProjectList = ({ projects }: { projects: ProjectsData }) => {
       body: JSON.stringify({ link: e.target.href, date: new Date().toLocaleString('en-GB'), id: user.id }),
     });
     //----------
-    // if (user.clicks) {
-
-    //   user.clicks.push([e.target.href,new Date().toLocaleString('en-GB')]);
-
-    // } else {
-    //   user.clicks = [[e.target.href,new Date().toLocaleString('en-GB')]];
-    // }
-    // console.log ('user', user);
-    // localStorage.setItem('user', JSON.stringify(user));
-
-    // console.log('saveClick', e.target.href);
   };
   //----------
 
@@ -92,7 +77,6 @@ const ProjectList = ({ projects }: { projects: ProjectsData }) => {
 
         {/* Container for all projects */}
         <div className="flex flex-wrap justify-evenly mx-0 my-3.5 ">
-          {/* <div className="flex flex-wrap justify-evenly mx-1.5 my-3.5 border-gray-600 border-2 "> */}
           {/* map through the list of projects array */}
           {projects.list.map((project, index) => (
             // Container for the project

@@ -4,8 +4,6 @@
  */
 
 exports.handler = async function (event, context) {
-  // console.log("event",event);
-  // console.log("context",context);
 
   // Check if the request is a POST request
   if (event.httpMethod !== 'POST') {
